@@ -1,0 +1,484 @@
+// MIXINS
+
+// MIXIN FOR THE BUTTONS
+
+@mixin button-styles($left, $top) {
+    width: 90px;
+    height: 78px;
+    left: $left;
+    top: $top;
+    position: absolute;
+    cursor: pointer;
+    background: linear-gradient(180deg, #414D66 0%, #161C27 100%);
+    box-shadow: 0px 0px 5px 2px #6988C64D inset, 0px 0px 1px 1px #8FA5D080;
+    border-radius: 6px;
+    border: 2px solid #000000B2;
+}
+
+// MIXIN FOR MEASURES
+
+@mixin measures($p1, $p2, $p3, $p4) {
+    width: $p1;
+    height: $p2;
+    left: $p3;
+    top: $p4;
+}
+
+// MIXIN FOR BUTTON TEXT
+
+@mixin button-styles-text($left, $top) {
+    left: $left;
+    top: $top;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Adobe Clean';
+    font-weight: 700;
+    word-wrap: break-word;
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.40);
+    line-height: 50px;
+}
+
+// MIXIN FOR CHANGE OF INPUT CLASS
+
+@mixin inputClasses($background, $font-size) {
+    width: 302px;
+    height: 118px;
+    flex-shrink: 0;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: 5px;
+    border: 2px;
+    background: $background;
+    border: 2px solid #242D3F;
+    box-shadow: 0px 3px 6px 3px #00000099 inset;
+    color: #5D6A69;
+    font-family: 'ds-digital';
+    font-size: $font-size;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+// MIXIN FOR THE ICON
+
+@mixin icon($width, $height, $left, $top) {
+    width: $width;
+    height: $height;
+    left: $left;
+    top: $top;
+}
+
+// FOONTS 
+
+@font-face {
+    font-family: 'bold';
+    src: url('../assets/fonts/AdobeClean-Bold.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'medium';
+    src: url('../assets/fonts/AdobeClean-Medium.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('../assets/fonts/AdobeClean-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'ds-digital';
+    src: url('../assets/fonts/ds-digital.otf') format('otf');
+}
+
+// ALL 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    body {
+        background-image: url('../assets/img/background-wall.jpg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+}
+
+
+// HEADER
+
+
+#header {
+    @include measures(100%, 50px, 0, 0);
+    border: 0px, 0px, 2px, 0px;
+    position: fixed;
+    text-align: center;
+    background: linear-gradient(0deg, #FFD600, #FFD600);
+    border-bottom: 2px solid #C2AF03;
+    font-family: 'Adobe Clean';
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+
+// MODAL 
+
+
+.modal {
+    @include measures(100%, 100%, 50%, 50%);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+
+    .modal-content {
+        @include measures(834px, 275px, 50%, 50%);
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        margin: 0 auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #747474;
+            text-align: center;
+            font-family:'Adobe Clean';
+            font-style: normal;
+            font-size: 54px;
+            font-weight: 500;
+            line-height: normal;
+            margin-top: 1rem;
+        }
+
+        p {
+            color: #747474;
+            text-align: center;
+            font-family: 'Adobe Clean';
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            margin-top: 2rem;
+        }
+
+    }
+}
+
+// GENERAL
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .inner-container {
+        @include measures(380px, 580px, 50%, 50%);
+
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(270deg, #222B3D 0%, #6A758B 100%);
+        box-shadow: 0px -14px 0px #161C27 inset;
+        border-radius: 18px;
+    }
+}
+
+// BACKGROUND
+
+.pinpad {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.background {
+    @include measures(380px, 580px, 0px, 0px);
+    position: absolute;
+    background: linear-gradient(270deg, #222B3D 0%, #6A758B 100%);
+    box-shadow: 0px -14px 0px #161C27 inset;
+    border-radius: 18px
+}
+
+.background_border {
+    @include measures(340px, 566px, 20px, 0px);
+    position: absolute;
+    background: #364157;
+    border-top: 1px #68748A solid;
+    border-right: 1px #68748A solid;
+    border-bottom: 1px #68748A solid
+}
+
+// GRID
+
+.grid {
+    @include measures(302px, 369px, 39px, 174px);
+    position: absolute;
+
+    .grid-first-button {
+        @include button-styles(0px, 0px);
+
+        div {
+            @include button-styles-text(35px, 14px);
+        }
+    }
+
+    .grid-second-button {
+
+        @include button-styles(0px, 97px);
+
+        div {
+
+            @include button-styles-text(33px, 14px);
+        }
+    }
+
+    .grid-third-button {
+
+        @include button-styles(0px, 194px);
+
+        div {
+            @include button-styles-text(37px, 14px);
+        }
+    }
+
+    .grid-fourth-button {
+        @include button-styles(0px, 291px);
+        background: linear-gradient(180deg, #EF6476 0%, #CF5060 100%);
+
+        div {
+            @include button-styles-text(33px, 14px);
+
+
+        }
+    }
+
+    .grid-fifth-button {
+        @include button-styles(106px, 0px);
+
+        div {
+            @include button-styles-text(33px, 14px);
+        }
+    }
+
+    .grid-sixth-button {
+        @include button-styles(106px, 97px);
+
+        div {
+            @include button-styles-text(34px, 14px);
+        }
+    }
+
+    .grid-seventh-button {
+        @include button-styles(106px, 194px);
+
+        div {
+            @include button-styles-text(34px, 14px);
+        }
+    }
+
+    .grid-eighth-button {
+
+        @include button-styles(106px, 291px);
+
+
+        div {
+            @include button-styles-text(33px, 14px);
+        }
+    }
+
+    .grid-ninth-button {
+
+        @include button-styles(212px, 0px);
+
+        div {
+            @include button-styles-text(33px, 14px);
+        }
+    }
+
+    .grid-tenth-button {
+
+        @include button-styles(212px, 97px);
+
+        div {
+            @include button-styles-text(33px, 14px);
+        }
+    }
+
+    .grid-eleventh-button {
+
+        @include button-styles(212px, 194px);
+
+        div {
+            @include button-styles-text(34px, 14px);
+        }
+    }
+
+    .grid-twelfth-button {
+
+        @include button-styles(212px, 291px);
+        background: linear-gradient(180deg, #6AECB0 0%, #42A484 100%);
+
+        div {
+            @include button-styles-text(12px, 19px);
+            font-size: 32px;
+            margin-bottom: 10rem;
+            line-height: 40px;
+        }
+
+        .ok {
+            margin-left: 0.6rem;
+            color: #FFF;
+            text-align: center;
+            text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.40);
+            font-family: 'Adobe Clean';
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+        }
+
+    }
+}
+
+
+.inputTextForm {
+    @include measures(182px, 64px, 39px, 27px);
+    position: absolute;
+
+    .input_text {
+        @include inputClasses(#E5F3F2, 64px);
+        line-height: normal;
+        padding-right: 3rem;
+        font-style: normal;
+        box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.60) inset;
+        border: 2px #242D3F solid;
+        font-family: 'ds-digital';
+
+    }
+
+    .inp {
+        left: 31px;
+        top: 30px;
+        position: absolute;
+        text-align: center;
+        color: #5D6A69;
+        font-size: 64px;
+        font-weight: 700;
+        word-wrap: break-word
+    }
+
+    .centerIcon {
+        @include icon(35px, 35px, 243px, 45px);
+        position: absolute;
+
+        .icon_background {
+            @include icon(35px, 35px, 0px, 0px);
+            position: absolute;
+
+            img {
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+
+.color:active {
+    background: linear-gradient(180deg, #7488B1 0%, #3F506E 100%);
+}
+
+
+.input_text_notaNumber {
+    @include inputClasses(linear-gradient(0deg, #FFE4E4, #FFE4E4), 40px);
+
+}
+
+.input_text_wrong {
+    @include inputClasses(linear-gradient(0deg, #FFE4E4, #FFE4E4), 64px);
+}
+
+
+.input_text_correct {
+    @include inputClasses(linear-gradient(0deg, #DEF4DA, #DEF4DA), 64px)
+}
+
+// MEDIAQUERY 
+
+@media screen and (min-width: 100px) and (max-width: 820px){
+
+    #header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 79px;
+        border: 0, 0, 2px, 0;
+        font-family: 'Adobe Clean'; 
+            p{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 30px;
+                letter-spacing: 0em;
+                text-align: center;    
+                height: 60px;         
+                display: block;
+                margin: auto;
+                margin-top: 0.3rem;   
+                width: 50%             
+                
+            }
+        
+    }
+
+   .modal{
+    .modal-content{
+        @include measures(300px,380px ,50% ,50% );
+        border-radius: 10px;
+        background: linear-gradient(0deg, #F0F0F0, #F0F0F0);
+
+        h2{
+            font-family: 'Adobe clean';
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 45px;
+            letter-spacing: 0em;
+            text-align: center;
+            margin-top: 3rem;
+            
+        }
+        p{
+            font-family: 'bold';
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: center;
+            
+        }
+    } 
+    
+   }
+
+}

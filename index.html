@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER  -->
+  
+        <header id="header" style="display: none;"></header>
+  
+    <main>
+
+        <!-- FIRST MODAL  -->
+
+        <div id="myModal" class="modal">
+            <div id="modal" class="modal-content">
+                <span class="close" onclick="closeModal()" id="closeModalBtn">&times;</span>
+                <h2>Bienvenido a Pinpad</h2>
+                <p>Introduce un numero de 6 digitos y dale a guardar. <br>
+                    La proxima vez podrás usar tu numero para acceder.</p>
+            </div>
+        </div>
+
+        <!-- SECOND MODAL  -->
+
+        <div style="display: none;" id="secondOverlay" class="modal">
+            <div style="display: none;" id="secondModal" class="modal-content">
+                <span class="close" onclick="closeModal()" id="closeModalBtn">&times;</span>
+                <h2>Introduce tu codigo</h2>
+                <p>Introduce el numero de 6 digitos para continuar <br>
+                    (tienes 3 intentos).</p>
+            </div>
+        </div>
+
+
+        <!-- PIN PAD  -->
+
+        <div class="container">
+            <div class="inner-container">
+                <div class="pinpad">
+                    <div class="background"></div>
+                    <div class="background_border"></div>
+
+                    <!-- GRID  -->
+
+                    <div class="grid">
+
+                        <!-- FIRST BUTTON  -->
+
+                        <button class="grid-first-button color" onclick="addNumber(7)">
+                            <div class="grid-first-button-text">7</div>
+                        </button>
+
+                        <!-- SECOND BUTTON  -->
+
+                        <button class="grid-second-button color" onclick="addNumber(4)">
+                            <div class="grid-second-button-text ">4</div>
+                        </button>
+
+                        <!-- THIRD BUTTON  -->
+
+                        <button class="grid-third-button color" onclick="addNumber(1)">
+                            <div class="grid-third-button-text ">1</div>
+                        </button>
+
+                        <!-- FOURTH BUTTON  -->
+
+                        <button class="grid-fourth-button" onclick="deleteArray()">
+                            <div class="grid-fourth-button-text">C</div>
+                        </button>
+
+                        <!-- FIFTH BUTTON  -->
+
+                        <button class="grid-fifth-button color" onclick="addNumber(8)">
+                            <div class="grid-fifth-button-text ">8</div>
+                        </button>
+
+                        <!-- SIXTH BUTTON  -->
+
+                        <button class="grid-sixth-button color" onclick="addNumber(5)">
+                            <div class="grid-sixth-button-text ">5</div>
+                        </button>
+
+                        <!-- SEVENTH BUTTON  -->
+                        
+                        <button class="grid-seventh-button color" onclick="addNumber(2)">
+                            <div class="grid-seventh-button-text ">2</div>
+                        </button>
+
+                        <!-- EIGHTH BUTTON  -->
+
+                        <button class="grid-eighth-button color" onclick="addNumber(0)">
+                            <div class="grid-eighth-button-text ">0</div>
+                        </button>
+
+                        <!-- NINE BUTTON  -->
+
+                        <button class="grid-ninth-button color" onclick="addNumber(9)">
+                          <div class="grid-ninth-button-text ">9</div>
+                        </button>
+
+                        <!-- TENTH BUTTON  -->
+
+                        <button class="grid-tenth-button color" onclick="addNumber(6)">
+                          <div class="grid-tenth-button-text ">6</div>
+                        </button>
+
+                        <!-- ELEVENTH BUTTON  -->
+
+                        <button class="grid-eleventh-button color" onclick="addNumber(3)">
+                            <div class="grid-eleventh-button-text ">3</div>
+                        </button>
+
+                        <!-- TWELFTH BUTTON  -->
+
+                        <button class="grid-twelfth-button " onclick="savePin()">
+                            <div class="grid-twelfth-button-text" id="save">Save</div>
+                        </button>
+
+                        <!-- OK BUTTON -->
+
+                        <button style="display: none;" id="ok" class="grid-twelfth-button " onclick="checkIt()">
+                            <div class="grid-twelfth-button-text ok" >OK</div>
+                        </button>
+
+                    </div>
+
+                    <!-- INPUT  -->
+
+                    <div class="inputTextForm">
+                        <input class="input_text" maxlength="6" id="pin">
+                        <div class="inp"></div>
+                        <div class="centerIcon">
+                            <div class="icon_background" id="hidePassword" style="display: none;">
+                                <img src="assets/img/visibility (1).svg" alt="" onclick="showPassword()"></div>
+                            <div id="revealPassword" class="icon_background"><img onclick="showPassword()" src="assets/img/visibility_off.svg"
+                                    alt=""></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <script src="js/proof.js"></script>
+</body>
+
+</html>
